@@ -21,4 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+from command_syntax_manager import parse_and_execute
 print('Hello! This OS is under development! visit https://github.com/Jothin-kumar/virtual-operating-system for updates!')
+while True:
+    command = input('>>> ')
+    parse_and_execute(command=command)
