@@ -26,15 +26,14 @@ from os import system
 
 
 def new_VOS():
-    VOS_path = input('Please enter a path where you would like to store your Virtual OS in host machine'
-                     '(Please remember this path you need it later!): ')
-    copytree(src='new_VOS_files', dst=VOS_path)
+    VOS_name = input('Please enter a name you would like to call your VOS (Please remember this path you need it later!): ')
+    copytree(src='new_VOS_files', dst=f'VOSs/{VOS_name}')
 
 
 def open_VOS():
-    VOS_path = input('Please enter a path where you stored your Virtual OS in host machine: ')
-    if not system(f'python3 "{VOS_path}/boot.py"'):
-        system(f'python "{VOS_path}/boot.py"')
+    VOS_name = input('Please enter the name of your VOS: ')
+    if not system(f'python3 "VOSs/{VOS_name}/root/boot/boot.py"'):
+        system(f'python "VOSs/{VOS_name}/root/boot/boot.py"')
 
 
 print('******************************Welcome!!!******************************')
