@@ -27,3 +27,9 @@ import sys
 def shutdown(args):
     print('Shutting down...')
     sys.exit()
+
+
+def echo(args):
+    for arg in args:
+        print(arg, end=' ')
+    print('', end='\n')
