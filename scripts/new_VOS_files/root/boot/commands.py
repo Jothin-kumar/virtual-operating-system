@@ -24,6 +24,6 @@ SOFTWARE.
 import sys
 
 
-def shutdown(*args):
+def shutdown(args):
     print('Shutting down...')
     sys.exit()
