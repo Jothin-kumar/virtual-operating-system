@@ -25,5 +25,9 @@ from commands import shutdown
 
 
 def parse_and_execute(command: str):
-    command_and_functions = {'shutdown': shutdown}
-    command_and_functions[command]()
+    command = command.strip().lower()
+    primary = command.split(' ')[0]
+    args = command.split(' ')
+    del args[0]
+    if primary == 'shutdown':
+        shutdown(args)
