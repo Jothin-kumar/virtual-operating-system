@@ -23,14 +23,19 @@ SOFTWARE.
 
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 """
-from os.path import join, realpath
+from os.path import join, relpath, exists, isdir
 
 cwd_ = 'root/home/Admin'
 
 
 def cd(dir_: str):
     global cwd_
-    cwd_ = realpath(join(cwd_, dir_))
+    if isdir(relpath(join(cwd_, dir_))):
+        cwd_ = relpath(join(cwd_, dir_))
+    elif exists(relpath(join(cwd_, dir_))):
+        print(f'Error: {dir_} is not a directory!')
+    else:
+        print(f'Error: {dir_} does not exist!')
 
 
 def get_VOS_dir():
