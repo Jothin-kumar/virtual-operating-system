@@ -24,7 +24,9 @@ SOFTWARE.
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 """
 import sys
-from current_dir import cd as cd_
+from os import listdir
+from os.path import realpath, join
+from current_dir import cd as cd_, get_VOS_dir
 
 
 def shutdown(args):
@@ -43,3 +45,11 @@ def cd(args):
     for arg in args:
         dir_ += arg
     cd_(dir_)
+
+
+def dir_(args):
+    parent_dir = get_VOS_dir()
+    for arg in args:
+        parent_dir = realpath(join(parent_dir, arg))
+    for file_or_folder in listdir(parent_dir):
+        print(file_or_folder)

@@ -23,11 +23,11 @@ SOFTWARE.
 
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 """
-from commands import shutdown, echo, cd
+from commands import shutdown, echo, cd, dir_
 
 
 def parse_and_execute(command: str):
-    command = command.strip().lower()
+    command = command.strip()
     primary = command.split(' ')[0]
     args = command.split(' ')
     del args[0]
@@ -37,3 +37,5 @@ def parse_and_execute(command: str):
         echo(args)
     elif primary == 'cd':
         cd(args)
+    elif primary == 'dir':
+        dir_(args)
