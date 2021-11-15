@@ -26,8 +26,6 @@ Author: Jothin kumar (https://jothin-kumar.github.io/)
 from os.path import join, realpath
 
 cwd_ = 'root/home/Admin'
-def cwd():
-    return cwd_
 
 
 def cd(dir_: str):
