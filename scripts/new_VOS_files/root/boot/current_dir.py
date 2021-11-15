@@ -23,13 +23,11 @@ SOFTWARE.
 
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 """
-from os import getcwd
 from os.path import join, realpath
 
-host_parent_dir = getcwd()[:-10]
-cwd_ = '/root/home/Admin'
+cwd_ = 'root/home/Admin'
 def cwd():
-    return realpath(join(host_parent_dir, cwd_))
+    return cwd_
 
 
 def cd(dir_: str):

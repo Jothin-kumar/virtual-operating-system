@@ -32,8 +32,8 @@ def new_VOS():
 
 def open_VOS():
     VOS_name = input('Please enter the name of your VOS: ')
-    if not system(f'python3 "VOSs/{VOS_name}/root/boot/boot.py"'):
-        system(f'python "VOSs/{VOS_name}/root/boot/boot.py"')
+    if not system(f'cd "VOSs/{VOS_name}" && python3 "root/boot/boot.py"'):
+        system(f'cd "VOSs/{VOS_name}" && python "root/boot/boot.py"')
 
 
 print('******************************Welcome!!!******************************')
