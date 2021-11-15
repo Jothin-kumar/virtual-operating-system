@@ -21,23 +21,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-import sys
-from current_dir import cd as cd_
+from os import getcwd
+from os.path import join, realpath
+
+host_parent_dir = getcwd()[:-10]
+cwd_ = '/root/home/Admin'
+def cwd():
+    return realpath(join(host_parent_dir, cwd_))
 
 
-def shutdown(args):
-    print('Shutting down...')
-    sys.exit()
+def cd(dir_: str):
+    global cwd_
+    cwd_ = realpath(join(cwd_, dir_))
 
 
-def echo(args):
-    for arg in args:
-        print(arg, end=' ')
-    print('', end='\n')
-
-
-def cd(args):
-    dir_ = ''
-    for arg in args:
-        dir_ += arg
-    cd_(dir_)
+def get_VOS_dir():
+    return cwd_

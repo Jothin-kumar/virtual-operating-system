@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from commands import shutdown, echo
+from commands import shutdown, echo, cd
 
 
 def parse_and_execute(command: str):
@@ -33,3 +33,5 @@ def parse_and_execute(command: str):
         shutdown(args)
     elif primary == 'echo':
         echo(args)
+    elif primary == 'cd':
+        cd(args)

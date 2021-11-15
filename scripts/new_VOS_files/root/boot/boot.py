@@ -22,7 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 from command_syntax_manager import parse_and_execute
+from current_dir import get_VOS_dir
+
+
 print('Hello! This OS is under development! visit https://github.com/Jothin-kumar/virtual-operating-system for updates!')
 while True:
-    command = input('>>> ')
+    command = input(f'{get_VOS_dir()}> ')
     parse_and_execute(command=command)
