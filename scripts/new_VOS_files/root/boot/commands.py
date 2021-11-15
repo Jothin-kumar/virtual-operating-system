@@ -27,10 +27,12 @@ import sys
 from os import listdir
 from os.path import realpath, join
 from current_dir import cd as cd_, get_VOS_dir
+import time
 
 
 def shutdown(args):
     print('Shutting down...')
+    time.sleep(1.5)
     sys.exit()
 
 
