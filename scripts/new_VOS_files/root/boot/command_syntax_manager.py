@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Author: Jothin kumar (https://jothin-kumar.github.io/)
+Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
 from commands import shutdown, echo, cd, dir_
 
