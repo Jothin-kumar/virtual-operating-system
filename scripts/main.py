@@ -29,7 +29,7 @@ from os import system
 
 
 def new_VOS():
-    VOS_name = input('Please enter a name you would like to call your VOS (Please remember this path you need it later!): ')
+    VOS_name = input('Please enter a name you would like to call your VOS (Please remember the name you need it later!): ')
     copytree(src='new_VOS_files', dst=f'VOSs/{VOS_name}')
 
 
