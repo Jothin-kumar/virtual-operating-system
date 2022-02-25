@@ -28,7 +28,7 @@ from command_syntax_manager import parse_and_execute
 from current_dir import get_VOS_dir
 
 
-print('Hello! This OS is under development! visit https://github.com/Jothin-kumar/virtual-operating-system for updates!')
+print('Hello, welcome on your personnal virtual operating system.')
 while True:
     command = input(f'{get_VOS_dir()}> ')
     parse_and_execute(command=command)

@@ -36,8 +36,7 @@ def cd(dir_: str):
     elif exists(relpath(join(cwd_, dir_))):
         print(f'Error: {dir_} is not a directory!')
     else:
-        print(f'Error: {dir_} does not exist!')
-
+        print(f'Error: {dir_} doesn\'t exist!')
 
 def get_VOS_dir():
     return cwd_
