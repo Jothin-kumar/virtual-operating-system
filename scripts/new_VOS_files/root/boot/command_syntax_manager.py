@@ -24,8 +24,7 @@ SOFTWARE.
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
-from commands import shutdown, echo, cd, dir_
-
+from commands import *
 
 def parse_and_execute(command: str):
     command = command.strip()
@@ -40,3 +39,11 @@ def parse_and_execute(command: str):
         cd(args)
     elif primary == 'dir':
         dir_(args)
+    elif primary == 'exit':
+        exit()
+    elif primary == 'reload':
+        reload()
+    elif primary == 'clear':
+        clearterminal()
+    else:
+        print("Error, this command doesn't exist !")

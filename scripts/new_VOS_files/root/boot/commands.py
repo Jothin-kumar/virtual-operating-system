@@ -25,7 +25,7 @@ Author: Jothin kumar (https://jothin-kumar.github.io/)
 Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
 import sys
-from os import listdir
+from os import system, listdir
 from os.path import realpath, join
 from current_dir import cd as cd_, get_VOS_dir
 import time
@@ -33,7 +33,7 @@ import time
 
 def shutdown(args):
     print('Shutting down...')
-    time.sleep(1.5)
+    time.sleep(0.5)
     sys.exit()
 
 
@@ -42,6 +42,10 @@ def echo(args):
         print(arg, end=' ')
     print('', end='\n')
 
+def exit():
+    print('Shutting down...')
+    time.sleep(0.2)
+    sys.exit()
 
 def cd(args):
     dir_ = ''
@@ -49,6 +53,12 @@ def cd(args):
         dir_ += arg
     cd_(dir_)
 
+def reload():
+    system('exit')
+    open_VOS()
+
+def clearterminal():
+    system('cls')
 
 def dir_(args):
     parent_dir = get_VOS_dir()

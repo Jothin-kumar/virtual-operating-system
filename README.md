@@ -8,8 +8,6 @@ A simple virtual operating system written in python. (Under development). Curren
 | `cd` | To change current working directory | `cd <your dir here>` | `cd ../` |
 | `dir` | To list all files and folders in a directory | `dir` to list all files and folders in current working directory, `dir <path to parent directory>` to look for files in another directory | `dir`, `dir ../` |
 | `shutdown` | To shutdown the virtual operating system | `shutdown` | `shutdown` |
-
-I am adding more commands! If you would like a command to be added, feel free to open an issue for that! While you wait for virtual os to be completed, check my other interesting projects:
- - https://github.com/Jothin-kumar/Geometry-app/
- - https://github.com/Jothin-kumar/lines-of-code/  
- - https://github.com/Jothin-kumar/time-widget/  
+| `exit` | To exit the virtual operating system | `exit` | `exit` |
+| `reload` | To reload the virtual operating system | `reload` | `reload` |
+| `clear` | To clear the terminal | `clear` | `clear` |

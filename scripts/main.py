@@ -35,17 +35,17 @@ def new_VOS():
 
 def open_VOS():
     VOS_name = input('Please enter the name of your VOS: ')
-    if not system(f'cd "VOSs/{VOS_name}" && python3 "root/boot/boot.py"'):
+    if not system(f'cd "VOSs/{VOS_name}" && python "root/boot/boot.py"'):
         system(f'cd "VOSs/{VOS_name}" && python "root/boot/boot.py"')
 
 
 print('******************************Welcome!!!******************************')
 while True:
-    choice = input('Enter "n" for a new VOS and "o" to open an existing VOS: ')
-    if choice == 'n':
+    choice = input('Enter "new" for a new VOS and "open" to open an existing VOS: ')
+    if choice == 'new':
         new_VOS()
         break
-    elif choice == 'o':
+    elif choice == 'open':
         open_VOS()
         break
     else:
