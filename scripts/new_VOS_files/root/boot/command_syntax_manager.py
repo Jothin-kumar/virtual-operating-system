@@ -45,5 +45,9 @@ def parse_and_execute(command: str):
         reload()
     elif primary == 'clear':
         clearterminal()
+    elif primary == 'help':
+        help()
+    elif primary == 'url':
+        url(args)
     else:
         print("Error, this command doesn't exist !")

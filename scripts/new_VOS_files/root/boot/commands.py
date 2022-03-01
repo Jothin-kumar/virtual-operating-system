@@ -61,6 +61,11 @@ def reload():
 def clearterminal():
     system('cls')
 
+def help():
+    print("\n****************************** Help ******************************")
+    print("- shutdown\n- reload\n- clear\n- exit\n- cd\n- help\n- dir")
+    print("******************************************************************")
+
 def dir_(args):
     parent_dir = get_VOS_dir()
     for arg in args:
