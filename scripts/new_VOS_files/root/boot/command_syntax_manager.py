@@ -47,7 +47,5 @@ def parse_and_execute(command: str):
         clearterminal()
     elif primary == 'help':
         help()
-    elif primary == 'qrcode':
-        qrcode(args)
     else:
         print("Error, this command doesn't exist !")
