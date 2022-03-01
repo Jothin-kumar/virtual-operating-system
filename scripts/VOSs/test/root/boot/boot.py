@@ -24,48 +24,11 @@ SOFTWARE.
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
-from os import system, listdir
-from current_dir import cd as cd_, get_VOS_dir
-from os.path import realpath, join
-import sys
-import time
+from command_syntax_manager import parse_and_execute
+from current_dir import get_VOS_dir
 
-def shutdown(args):
-    print('Shutting down...')
-    time.sleep(0.5)
-    sys.exit()
+print('\n\tHello, welcome on your personnal virtual operating system.\n')
 
-def echo(args):
-    for arg in args:
-        print(arg, end=' ')
-    print('', end='\n')
-
-def exit():
-    print('Shutting down...')
-    time.sleep(0.2)
-    sys.exit()
-
-def cd(args):
-    dir_ = ''
-    for arg in args:
-        dir_ += arg
-    cd_(dir_)
-
-def reload():
-    system('exit')
-    open_VOS()
-
-def clearterminal():
-    system('cls')
-
-def help():
-    print("\n****************************** Help ******************************")
-    print("- shutdown\n- reload\n- clear\n- exit\n- cd\n- help\n- dir")
-    print("******************************************************************")
-
-def dir_(args):
-    parent_dir = get_VOS_dir()
-    for arg in args:
-        parent_dir = realpath(join(parent_dir, arg))
-    for file_or_folder in listdir(parent_dir):
-        print(file_or_folder)
+while True:
+    command = input(f'{get_VOS_dir()}> ')
+    parse_and_execute(command=command)

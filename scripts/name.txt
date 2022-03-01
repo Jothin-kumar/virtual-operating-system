@@ -1,1 +1,1 @@
-VOS_name: test 1
+VOS_name: test

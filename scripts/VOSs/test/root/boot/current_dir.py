@@ -24,48 +24,19 @@ SOFTWARE.
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
-from os import system, listdir
-from current_dir import cd as cd_, get_VOS_dir
-from os.path import realpath, join
-import sys
-import time
+from os.path import join, relpath, exists, isdir
 
-def shutdown(args):
-    print('Shutting down...')
-    time.sleep(0.5)
-    sys.exit()
+cwd_ = 'root/home/Admin'
 
-def echo(args):
-    for arg in args:
-        print(arg, end=' ')
-    print('', end='\n')
 
-def exit():
-    print('Shutting down...')
-    time.sleep(0.2)
-    sys.exit()
+def cd(dir_: str):
+    global cwd_
+    if isdir(relpath(join(cwd_, dir_))):
+        cwd_ = relpath(join(cwd_, dir_))
+    elif exists(relpath(join(cwd_, dir_))):
+        print(f'Error: {dir_} is not a directory!')
+    else:
+        print(f'Error: {dir_} doesn\'t exist!')
 
-def cd(args):
-    dir_ = ''
-    for arg in args:
-        dir_ += arg
-    cd_(dir_)
-
-def reload():
-    system('exit')
-    open_VOS()
-
-def clearterminal():
-    system('cls')
-
-def help():
-    print("\n****************************** Help ******************************")
-    print("- shutdown\n- reload\n- clear\n- exit\n- cd\n- help\n- dir")
-    print("******************************************************************")
-
-def dir_(args):
-    parent_dir = get_VOS_dir()
-    for arg in args:
-        parent_dir = realpath(join(parent_dir, arg))
-    for file_or_folder in listdir(parent_dir):
-        print(file_or_folder)
+def get_VOS_dir():
+    return cwd_

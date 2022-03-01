@@ -27,7 +27,11 @@ Original repository link: https://github.com/Jothin-kumar/virtual-operating-syst
 from os import system, listdir
 from current_dir import cd as cd_, get_VOS_dir
 from os.path import realpath, join
+from pyqrcode import QRCode
 import sys
+import pyqrcode
+import random
+import png
 import time
 
 def shutdown(args):
@@ -62,6 +66,14 @@ def help():
     print("\n****************************** Help ******************************")
     print("- shutdown\n- reload\n- clear\n- exit\n- cd\n- help\n- dir")
     print("******************************************************************")
+
+def qrcode(args):
+    content = ""
+    for arg in args:
+        qrcode_id = random.randint(0, 100000000000)
+        content = arg
+        url = pyqrcode.create(content)
+        url.png(f"./home/Admin/Desktop/qrcode-{qrcode_id}", scale=8)
 
 def dir_(args):
     parent_dir = get_VOS_dir()
