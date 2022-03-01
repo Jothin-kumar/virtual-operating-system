@@ -25,8 +25,7 @@ Author: Jothin kumar (https://jothin-kumar.github.io/)
 Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
 import sys
-from os import system
-from os import listdir
+from os import system, listdir
 from os.path import realpath, join
 from current_dir import cd as cd_, get_VOS_dir
 import time
