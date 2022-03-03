@@ -29,7 +29,10 @@ from os import system
 
 
 def new_VOS():
-    VOS_name = input('Please enter a name you would like to call your VOS (Please remember the name you need it later!): ')
+    VOS_name = input('Please enter a name you would like to call your VOS (Please remember the name you need it later! If you forget it, your VOS\'s name is in "name.txt"): ')
+    file = open('name.txt', 'w')
+    file.write("VOS_name: " + VOS_name)
+    file.close()
     copytree(src='new_VOS_files', dst=f'VOSs/{VOS_name}')
 
 
@@ -39,13 +42,13 @@ def open_VOS():
         system(f'cd "VOSs/{VOS_name}" && python "root/boot/boot.py"')
 
 
-print('******************************Welcome!!!******************************')
+print('******************************Welcome !******************************')
 while True:
     choice = input('Enter "new" for a new VOS and "open" to open an existing VOS: ')
-    if choice == 'new':
+    if choice == 'new' or choice == 'n':
         new_VOS()
         break
-    elif choice == 'open':
+    elif choice == 'open' or choice == 'o':
         open_VOS()
         break
     else:

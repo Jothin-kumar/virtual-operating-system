@@ -24,18 +24,16 @@ SOFTWARE.
 Author: Jothin kumar (https://jothin-kumar.github.io/)
 Original repository link: https://github.com/Jothin-kumar/virtual-operating-system
 """
-import sys
 from os import system, listdir
-from os.path import realpath, join
 from current_dir import cd as cd_, get_VOS_dir
+from os.path import realpath, join
+import sys
 import time
-
 
 def shutdown(args):
     print('Shutting down...')
     time.sleep(0.5)
     sys.exit()
-
 
 def echo(args):
     for arg in args:
@@ -59,6 +57,11 @@ def reload():
 
 def clearterminal():
     system('cls')
+
+def help():
+    print("\n****************************** Help ******************************")
+    print("- shutdown\n- reload\n- clear\n- exit\n- cd\n- help\n- dir")
+    print("******************************************************************")
 
 def dir_(args):
     parent_dir = get_VOS_dir()

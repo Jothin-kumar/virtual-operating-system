@@ -45,5 +45,7 @@ def parse_and_execute(command: str):
         reload()
     elif primary == 'clear':
         clearterminal()
+    elif primary == 'help':
+        help()
     else:
         print("Error, this command doesn't exist !")
